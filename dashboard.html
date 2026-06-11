@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<div class="sidebar">
+
+    <h2>Sistema</h2>
+
+    <a href="dashboard.html">🏠 Dashboard</a>
+
+    <a href="clientes.html">👤 Clientes</a>
+
+    <a href="pedidos.html">🛒 Pedidos</a>
+
+    <a href="promocoes.html">🎁 Promoções</a>
+
+    <a href="fidelidade.html">⭐ Fidelidade</a>
+
+    <a href="atendimento.html">💬 Atendimento</a>
+
+    <hr style="margin:20px; border-color:#34435f;">
+
+    <a href="#" onclick="logout()">🚪 Sair</a>
+
+</div>
+
+<div class="content">
+
+    <h1>Dashboard Geral</h1>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>Pedidos Hoje</h3>
+            <h2>52</h2>
+        </div>
+
+        <div class="card">
+            <h3>Clientes Ativos</h3>
+            <h2>1320</h2>
+        </div>
+
+        <div class="card">
+            <h3>Promoções Ativas</h3>
+            <h2>8</h2>
+        </div>
+
+        <div class="card">
+            <h3>Faturamento Hoje</h3>
+            <h2>R$ 8.450</h2>
+        </div>
+
+        <div class="card">
+            <h3>Pontos Distribuídos</h3>
+            <h2>21.350</h2>
+        </div>
+
+        <div class="card">
+            <h3>Atendimentos</h3>
+            <h2>17</h2>
+        </div>
+
+    </div>
+
+    <h2 style="margin-top:40px;margin-bottom:20px;">
+        Últimos Pedidos
+    </h2>
+
+    <table>
+
+        <tr>
+
+            <th>Pedido</th>
+
+            <th>Cliente</th>
+
+            <th>Status</th>
+
+            <th>Valor</th>
+
+        </tr>
+
+        <tr>
+
+            <td>#1001</td>
+
+            <td>João Silva</td>
+
+            <td class="status-preparando">Preparando</td>
+
+            <td>R$ 58,00</td>
+
+        </tr>
+
+        <tr>
+
+            <td>#1002</td>
+
+            <td>Maria Souza</td>
+
+            <td class="status-finalizado">Entregue</td>
+
+            <td>R$ 84,00</td>
+
+        </tr>
+
+        <tr>
+
+            <td>#1003</td>
+
+            <td>Pedro Alves</td>
+
+            <td class="status-ativo">Em andamento</td>
+
+            <td>R$ 120,00</td>
+
+        </tr>
+
+    </table>
+
+</div>
+
+<script src="js/auth.js"></script>
+
+</body>
+
+</html>
+```

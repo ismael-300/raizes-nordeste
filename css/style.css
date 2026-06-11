@@ -1,0 +1,346 @@
+css
+/* ===========================
+   RESET
+=========================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background: #f5f6fa;
+    color: #333;
+}
+
+/* ===========================
+   SIDEBAR
+=========================== */
+
+.sidebar {
+    position: fixed;
+    width: 240px;
+    height: 100vh;
+    background: #202940;
+    padding-top: 30px;
+}
+
+.sidebar h2 {
+    color: white;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.sidebar a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 15px 25px;
+    transition: .3s;
+}
+
+.sidebar a:hover {
+    background: #34435f;
+}
+
+/* ===========================
+   CONTEÚDO
+=========================== */
+
+.content {
+    margin-left: 240px;
+    padding: 40px;
+}
+
+.content h1 {
+    margin-bottom: 25px;
+    color: #202940;
+}
+
+/* ===========================
+   BOTÕES
+=========================== */
+
+button {
+
+    background: #2d7df6;
+
+    color: white;
+
+    border: none;
+
+    padding: 12px 20px;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+
+    margin-bottom: 20px;
+
+    transition: .3s;
+
+}
+
+button:hover {
+
+    background: #1d65d6;
+
+}
+
+/* ===========================
+   TABELAS
+=========================== */
+
+table {
+
+    width: 100%;
+
+    background: white;
+
+    border-collapse: collapse;
+
+    box-shadow: 0px 3px 8px rgba(0,0,0,.08);
+
+}
+
+table th {
+
+    background: #202940;
+
+    color: white;
+
+    padding: 15px;
+
+}
+
+table td {
+
+    padding: 15px;
+
+    border-bottom: 1px solid #eee;
+
+}
+
+table tr:hover {
+
+    background: #f1f1f1;
+
+}
+
+/* ===========================
+   LOGIN
+=========================== */
+
+.login {
+
+    width: 400px;
+
+    margin: 120px auto;
+
+    background: white;
+
+    padding: 40px;
+
+    border-radius: 10px;
+
+    box-shadow: 0px 5px 15px rgba(0,0,0,.1);
+
+}
+
+.login h1 {
+
+    text-align: center;
+
+    margin-bottom: 25px;
+
+    color: #202940;
+
+}
+
+.login input {
+
+    width: 100%;
+
+    padding: 12px;
+
+    margin-bottom: 15px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 5px;
+
+}
+
+.login button {
+
+    width: 100%;
+
+}
+
+/* ===========================
+   CARDS DASHBOARD
+=========================== */
+
+.cards {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+
+    margin-bottom: 30px;
+
+}
+
+.card {
+
+    background: white;
+
+    padding: 25px;
+
+    border-radius: 8px;
+
+    box-shadow: 0px 3px 10px rgba(0,0,0,.08);
+
+}
+
+.card h3 {
+
+    color: #555;
+
+    margin-bottom: 15px;
+
+}
+
+.card h2 {
+
+    font-size: 32px;
+
+    color: #2d7df6;
+
+}
+
+/* ===========================
+   INPUTS
+=========================== */
+
+input,
+select {
+
+    width: 100%;
+
+    padding: 12px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 5px;
+
+    margin-bottom: 15px;
+
+}
+
+/* ===========================
+   FORMULÁRIOS
+=========================== */
+
+.form {
+
+    background: white;
+
+    padding: 25px;
+
+    border-radius: 8px;
+
+    box-shadow: 0px 3px 10px rgba(0,0,0,.08);
+
+}
+
+/* ===========================
+   STATUS
+=========================== */
+
+.status-ativo {
+
+    color: green;
+
+    font-weight: bold;
+
+}
+
+.status-preparando {
+
+    color: orange;
+
+    font-weight: bold;
+
+}
+
+.status-finalizado {
+
+    color: blue;
+
+    font-weight: bold;
+
+}
+
+.status-cancelado {
+
+    color: red;
+
+    font-weight: bold;
+
+}
+
+/* ===========================
+   RESPONSIVO
+=========================== */
+
+@media(max-width:900px){
+
+.cards{
+
+grid-template-columns:1fr;
+
+}
+
+.sidebar{
+
+width:100%;
+
+height:auto;
+
+position:relative;
+
+}
+
+.content{
+
+margin-left:0;
+
+}
+
+}
+
+@media(max-width:600px){
+
+table{
+
+display:block;
+
+overflow-x:auto;
+
+}
+
+.login{
+
+width:95%;
+
+margin-top:50px;
+
+}
+
+}
+
