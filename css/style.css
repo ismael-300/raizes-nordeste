@@ -345,114 +345,125 @@ margin-top:50px;
 }
 
 /* ==========================================
-   RESPONSIVIDADE
+   LOGIN RESPONSIVO
 ========================================== */
 
-/* Tablets */
-@media (max-width: 1024px) {
+.login-page{
 
-    .content {
-        margin-left: 0;
-        padding: 20px;
-    }
+    background: linear-gradient(180deg,#202940,#2d7df6);
 
-    .sidebar {
-        position: relative;
-        width: 100%;
-        height: auto;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        padding: 15px;
-    }
+    min-height:100vh;
 
-    .sidebar h2 {
-        width: 100%;
-        margin-bottom: 15px;
-    }
+    display:flex;
 
-    .sidebar a {
-        padding: 10px 15px;
-    }
+    justify-content:center;
 
-    table {
-        font-size: 14px;
-    }
+    align-items:center;
+
+    padding:20px;
 
 }
 
-/* Celulares */
-@media (max-width: 768px) {
+.login-container{
 
-    .content {
-        padding: 15px;
-    }
+    width:100%;
 
-    h1 {
-        font-size: 24px;
-    }
-
-    button {
-        width: 100%;
-        margin-bottom: 10px;
-    }
-
-    input,
-    select,
-    textarea {
-        width: 100%;
-    }
-
-    .grid {
-        grid-template-columns: 1fr;
-    }
-
-    /* Tabela com rolagem horizontal */
-    table {
-        display: block;
-        overflow-x: auto;
-        white-space: nowrap;
-        width: 100%;
-    }
-
-    table thead,
-    table tbody,
-    table tr {
-        width: 100%;
-    }
+    max-width:420px;
 
 }
 
-/* Celulares pequenos */
-@media (max-width: 480px) {
+.login-card{
 
-    .sidebar {
-        display: block;
-        text-align: center;
-    }
+    background:#fff;
 
-    .sidebar a {
-        display: block;
-        padding: 12px;
-        border-bottom: 1px solid #34435f;
-    }
+    border-radius:20px;
 
-    .content {
-        padding: 10px;
-    }
+    padding:35px;
 
-    h1 {
-        font-size: 22px;
-    }
+    box-shadow:0 10px 30px rgba(0,0,0,.2);
 
-    .form {
-        padding: 15px;
-    }
+    text-align:center;
 
-    table th,
-    table td {
-        padding: 10px;
-        font-size: 13px;
-    }
+}
+
+.logo{
+
+    width:110px;
+
+    margin-bottom:20px;
+
+}
+
+.login-card h1{
+
+    color:#202940;
+
+    margin-bottom:8px;
+
+    font-size:28px;
+
+}
+
+.login-card p{
+
+    color:#777;
+
+    margin-bottom:25px;
+
+}
+
+.login-card input{
+
+    width:100%;
+
+    padding:15px;
+
+    border-radius:10px;
+
+    border:1px solid #ddd;
+
+    margin-bottom:15px;
+
+    font-size:16px;
+
+}
+
+.login-card input:focus{
+
+    outline:none;
+
+    border-color:#2d7df6;
+
+    box-shadow:0 0 8px rgba(45,125,246,.2);
+
+}
+
+.login-card button{
+
+    width:100%;
+
+    padding:15px;
+
+    font-size:17px;
+
+    font-weight:bold;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#2d7df6;
+
+    color:white;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.login-card button:hover{
+
+    background:#1d65d6;
 
 }

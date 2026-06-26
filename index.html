@@ -1,29 +1,51 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
+
     <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Login</title>
+
     <link rel="stylesheet" href="css/style.css">
+
 </head>
-<body>
 
-<div class="login">
+<body class="login-page">
 
-    <h1>Sistema de Gestão - Raízes do Nordeste</h1>
+<div class="login-container">
 
-    <input type="email" id="email" placeholder="Email">
+    <div class="login-card">
 
-    <input type="password" id="senha" placeholder="Senha">
 
-    <button onclick="login()">
-        Entrar
-    </button>
+        <h1>Raízes do Nordeste</h1>
+
+        <p>Faça login para continuar</p>
+
+        <input
+            type="email"
+            id="email"
+            placeholder="E-mail"
+        >
+
+        <input
+            type="password"
+            id="senha"
+            placeholder="Senha"
+        >
+
+        <button onclick="login()">
+            Entrar
+        </button>
+
+    </div>
 
 </div>
 
 <script src="js/login.js"></script>
 
-
-
 </body>
+
 </html>
