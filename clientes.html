@@ -36,30 +36,75 @@
 
 <h1>Clientes</h1>
 
-<button>Novo Cliente</button>
+<button onclick="window.location.href='cadastro-cliente.html'">
+    Novo Cliente
+</button>
+
 
 <table>
 
-<tr>
-<th>Nome</th>
-<th>Telefone</th>
-<th>Pontos</th>
-<th>Status</th>
-</tr>
+    <thead>
 
-<tr>
-<td>João Silva</td>
-<td>(51)99999-9999</td>
-<td>210</td>
-<td>Ativo</td>
-</tr>
+        <tr>
 
-<tr>
-<td>Maria Souza</td>
-<td>(51)98888-8888</td>
-<td>540</td>
-<td>Ativo</td>
-</tr>
+            <th>Nome</th>
+            <th>CPF</th>
+            <th>Telefone</th>
+            <th>E-mail</th>
+            <th>Cidade</th>
+            <th>Pontos</th>
+            <th>Status</th>
+            <th>Ações</th>
+
+        </tr>
+
+    </thead>
+
+    <tbody id="listaClientes">
+
+        </tbody>
+
+        <tr>
+
+            <td>João Silva</td>
+            <td>123.456.789-00</td>
+            <td>(51) 99999-9999</td>
+            <td>joao@email.com</td>
+            <td>Montenegro</td>
+            <td>210</td>
+            <td><span class="status-ativo">Ativo</span></td>
+
+            <td>
+
+                <button>Editar</button>
+
+                <button>Excluir</button>
+
+            </td>
+
+        </tr>
+
+        <tr>
+
+            <td>Maria Souza</td>
+            <td>987.654.321-00</td>
+            <td>(51) 98888-8888</td>
+            <td>maria@email.com</td>
+            <td>Porto Alegre</td>
+            <td>540</td>
+            <td><span class="status-ativo">Ativo</span></td>
+
+            <td>
+
+                <button>Editar</button>
+
+                <button>Excluir</button>
+
+            </td>
+
+        </tr>
+
+    </tbody>
 
 </table>
 

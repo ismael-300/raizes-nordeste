@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Novo Cliente</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<div class="sidebar">
+
+    <h2>Sistema</h2>
+
+    <a href="dashboard.html">🏠 Dashboard</a>
+
+    <a href="clientes.html">👤 Clientes</a>
+
+    <a href="pedidos.html">🛒 Pedidos</a>
+
+    <a href="promocoes.html">🎁 Promoções</a>
+
+    <a href="fidelidade.html">⭐ Fidelidade</a>
+
+    <a href="atendimento.html">💬 Atendimento</a>
+
+</div>
+
+<div class="content">
+
+    <h1>Novo Cliente</h1>
+
+    <div class="form">
+
+     <label>Nome</label>
+
+<input
+    id="nome"
+    type="text"
+>
+
+<label>CPF</label>
+
+<input
+    id="cpf"
+    type="text"
+>
+
+<label>Telefone</label>
+
+<input
+    id="telefone"
+    type="text"
+>
+
+<label>E-mail</label>
+
+<input
+    id="email"
+    type="email"
+>
+
+<label>Cidade</label>
+
+<input
+    id="cidade"
+    type="text"
+>
+
+      <button onclick="salvarCliente()">
+
+    Salvar Cliente
+
+</button>
+
+        <button
+            onclick="window.location.href='clientes.html'"
+        >
+
+            Cancelar
+
+        </button>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>
+
+<script src="js/cliente.js"></script>
