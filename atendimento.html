@@ -3,23 +3,25 @@
 
 <head>
 
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-<title>Atendimento</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="stylesheet" href="css/style.css">
+    <title>Atendimento</title>
+
+    <link rel="stylesheet" href="css/style.css">
 
 </head>
 
-<script src="js/auth.js"></script>
-
 <body>
+
+<script src="js/auth.js"></script>
 
 <div class="sidebar">
 
-<h2>Sistema</h2>
+    <h2>Sistema</h2>
 
- <a href="dashboard.html">🏠 Dashboard</a>
+    <a href="dashboard.html">🏠 Dashboard</a>
 
     <a href="clientes.html">👤 Clientes</a>
 
@@ -31,7 +33,7 @@
 
     <a href="atendimento.html">💬 Atendimento</a>
 
-    <hr style="margin:20px; border-color:#34435f;">
+    <hr>
 
     <a href="#" onclick="logout()">🚪 Sair</a>
 
@@ -39,43 +41,55 @@
 
 <div class="content">
 
-<h1>Atendimento ao Cliente</h1>
+    <h1>Atendimento ao Cliente</h1>
 
-<button>Novo Atendimento</button>
+    <button>Novo Atendimento</button>
 
-<table>
+    <div class="table-responsive">
 
-<tr>
+        <table>
 
-<th>Cliente</th>
+            <thead>
 
-<th>Assunto</th>
+                <tr>
 
-<th>Status</th>
+                    <th>Cliente</th>
 
-</tr>
+                    <th>Assunto</th>
 
-<tr>
+                    <th>Status</th>
 
-<td>João Silva</td>
+                </tr>
 
-<td>Entrega atrasada</td>
+            </thead>
 
-<td>Em andamento</td>
+            <tbody>
 
-</tr>
+                <tr>
 
-<tr>
+                    <td data-label="Cliente">João Silva</td>
 
-<td>Maria Souza</td>
+                    <td data-label="Assunto">Entrega atrasada</td>
 
-<td>Dúvida sobre pontos</td>
+                    <td data-label="Status">Em andamento</td>
 
-<td>Finalizado</td>
+                </tr>
 
-</tr>
+                <tr>
 
-</table>
+                    <td data-label="Cliente">Maria Souza</td>
+
+                    <td data-label="Assunto">Dúvida sobre pontos</td>
+
+                    <td data-label="Status">Finalizado</td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
 
 </div>
 
