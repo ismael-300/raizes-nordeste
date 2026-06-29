@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>RF02 - Gerenciamento de Pedidos</title>
+
+<style>
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f4f6f9;
+    margin:30px;
+}
+
+.container{
+    width:1000px;
+    margin:auto;
+}
+
+.card{
+    background:#fff;
+    padding:20px;
+    margin-bottom:20px;
+    border-radius:8px;
+    box-shadow:0 0 10px rgba(0,0,0,.15);
+}
+
+h1{
+    text-align:center;
+    color:#003366;
+}
+
+label{
+    display:block;
+    margin-top:10px;
+}
+
+select,input{
+    width:100%;
+    padding:10px;
+    margin-top:5px;
+}
+
+button{
+    margin-top:15px;
+    padding:10px 18px;
+    background:#003366;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#0055aa;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:20px;
+}
+
+table,th,td{
+    border:1px solid #ccc;
+}
+
+th{
+    background:#003366;
+    color:white;
+}
+
+th,td{
+    padding:10px;
+    text-align:center;
+}
+
+.success{
+    color:green;
+    font-weight:bold;
+}
+
+.error{
+    color:red;
+    font-weight:bold;
+}
+
+.info{
+    margin-top:20px;
+    background:#eef7ff;
+    padding:15px;
+    border-left:5px solid #003366;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="card">
+
+<h1>Gerenciamento de Pedidos</h1>
+
+<label>Produto</label>
+
+<select id="produto">
+
+<option value="25">Hambúrguer - R$25</option>
+<option value="15">Batata Frita - R$15</option>
+<option value="8">Refrigerante - R$8</option>
+
+</select>
+
+<label>Quantidade</label>
+
+<input type="number" id="quantidade" value="1" min="1">
+
+<button onclick="adicionar()">
+Adicionar ao Carrinho
+</button>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Produto</th>
+<th>Quantidade</th>
+<th>Valor Unitário</th>
+<th>Total</th>
+
+</tr>
+
+</thead>
+
+<tbody id="carrinho">
+
+</tbody>
+
+</table>
+
+<h3>Total do Pedido: R$ <span id="totalPedido">0.00</span></h3>
+
+<button onclick="finalizarPedido()">
+Finalizar Pedido
+</button>
+
+<p id="mensagem"></p>
+
+</div>
+
+<div class="card">
+
+<h2>Histórico de Pedidos</h2>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Nº Pedido</th>
+<th>Itens</th>
+<th>Valor</th>
+
+</tr>
+
+</thead>
+
+<tbody id="historico">
+
+</tbody>
+
+</table>
+
+<div class="info">
+
+<b>Casos de Teste Simulados</b>
+
+<ul>
+
+<li>CT-RF02-01 – Criar pedido com itens válidos.</li>
+
+<li>CT-RF02-02 – Calcular corretamente quantidade e valores.</li>
+
+<li>CT-RF02-03 – Impedir finalizar pedido vazio.</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+let carrinho=[];
+let pedidos=[];
+let numeroPedido=1001;
+
+function adicionar(){
+
+let produto=document.getElementById("produto");
+let nome=produto.options[produto.selectedIndex].text.split(" - ")[0];
+let valor=parseFloat(produto.value);
+
+let quantidade=parseInt(document.getElementById("quantidade").value);
+
+let total=valor*quantidade;
+
+carrinho.push({
+
+produto:nome,
+valor:valor,
+quantidade:quantidade,
+total:total
+
+});
+
+atualizarCarrinho();
+
+}
+
+function atualizarCarrinho(){
+
+let tabela=document.getElementById("carrinho");
+
+tabela.innerHTML="";
+
+let totalPedido=0;
+
+carrinho.forEach(item=>{
+
+totalPedido+=item.total;
+
+tabela.innerHTML+=`
+
+<tr>
+
+<td>${item.produto}</td>
+
+<td>${item.quantidade}</td>
+
+<td>R$ ${item.valor.toFixed(2)}</td>
+
+<td>R$ ${item.total.toFixed(2)}</td>
+
+</tr>
+
+`;
+
+});
+
+document.getElementById("totalPedido").innerHTML=totalPedido.toFixed(2);
+
+}
+
+function finalizarPedido(){
+
+if(carrinho.length==0){
+
+document.getElementById("mensagem").innerHTML=
+"<span class='error'> Não é possível finalizar um pedido sem produtos.</span>";
+
+return;
+
+}
+
+let total=0;
+
+carrinho.forEach(item=>total+=item.total);
+
+let pedido={
+
+numero:numeroPedido++,
+itens:carrinho.length,
+valor:total
+
+};
+
+pedidos.push(pedido);
+
+document.getElementById("historico").innerHTML+=`
+
+<tr>
+
+<td>${pedido.numero}</td>
+
+<td>${pedido.itens}</td>
+
+<td>R$ ${pedido.valor.toFixed(2)}</td>
+
+</tr>
+
+`;
+
+document.getElementById("mensagem").innerHTML=
+
+"<span class='success'>Pedido criado com sucesso.<br>" +
+
+"Número do Pedido: <b>"+pedido.numero+"</b><br></span>";
+
+carrinho=[];
+
+atualizarCarrinho();
+
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+<title>Painel Administrativo - RF05</title>
+
+<style>
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#eef2f7;
+    margin:30px;
+}
+
+.container{
+    max-width:1100px;
+    margin:auto;
+}
+
+.card{
+    background:white;
+    padding:20px;
+    border-radius:8px;
+    margin-bottom:20px;
+    box-shadow:0 0 10px rgba(0,0,0,.15);
+}
+
+h1{
+    color:#003366;
+    text-align:center;
+}
+
+h2{
+    color:#003366;
+}
+
+label{
+    display:block;
+    margin-top:12px;
+}
+
+select,input{
+    width:100%;
+    padding:10px;
+    margin-top:5px;
+}
+
+button{
+
+padding:10px 20px;
+margin-top:15px;
+background:#003366;
+color:white;
+border:none;
+border-radius:5px;
+cursor:pointer;
+
+}
+
+button:hover{
+
+background:#0055aa;
+
+}
+
+.kpis{
+
+display:flex;
+gap:20px;
+margin-top:20px;
+
+}
+
+.kpi{
+
+flex:1;
+background:#003366;
+color:white;
+padding:20px;
+border-radius:8px;
+text-align:center;
+
+}
+
+.kpi h3{
+
+margin:0;
+
+}
+
+.kpi p{
+
+font-size:28px;
+margin-top:10px;
+
+}
+
+table{
+
+width:100%;
+margin-top:20px;
+border-collapse:collapse;
+
+}
+
+table,th,td{
+
+border:1px solid #ccc;
+
+}
+
+th{
+
+background:#003366;
+color:white;
+
+}
+
+th,td{
+
+padding:10px;
+text-align:center;
+
+}
+
+.success{
+
+color:green;
+font-weight:bold;
+
+}
+
+.error{
+
+color:red;
+font-weight:bold;
+
+}
+
+.info{
+
+background:#eef7ff;
+padding:15px;
+border-left:5px solid #003366;
+margin-top:20px;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="card">
+
+<h1>Painel Administrativo</h1>
+
+<label>Perfil do Usuário</label>
+
+<select id="perfil">
+
+<option>Gestor</option>
+<option>Funcionário</option>
+
+</select>
+
+<label>Período</label>
+
+<select id="periodo">
+
+<option>Hoje</option>
+<option>Últimos 7 dias</option>
+<option>Últimos 30 dias</option>
+
+</select>
+
+<button onclick="acessar()">
+
+Acessar Painel
+
+</button>
+
+<p id="mensagem"></p>
+
+</div>
+
+<div id="dashboard" style="display:none;">
+
+<div class="card">
+
+<h2>Indicadores Operacionais</h2>
+
+<div class="kpis">
+
+<div class="kpi">
+
+<h3>Vendas</h3>
+
+<p>R$ 28.500</p>
+
+</div>
+
+<div class="kpi">
+
+<h3>Pedidos</h3>
+
+<p>352</p>
+
+</div>
+
+<div class="kpi">
+
+<h3>Clientes</h3>
+
+<p>148</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Relatório Gerencial</h2>
+
+<table>
+
+<tr>
+
+<th>Período</th>
+<th>Vendas</th>
+<th>Pedidos</th>
+<th>Clientes</th>
+
+</tr>
+
+<tbody id="relatorio">
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<div class="info">
+
+<b>Casos de Teste Simulados</b>
+
+<ul>
+
+<li><b>CT-RF05-01</b> Consulta de relatório por período.</li>
+
+<li><b>CT-RF05-02</b> Visualização dos indicadores operacionais.</li>
+
+<li><b>CT-RF05-03</b> Bloqueio de acesso para usuário sem perfil de gestor.</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+function acessar(){
+
+let perfil=document.getElementById("perfil").value;
+let periodo=document.getElementById("periodo").value;
+
+if(perfil!="Gestor"){
+
+document.getElementById("dashboard").style.display="none";
+
+document.getElementById("mensagem").innerHTML=
+
+"<span class='error'> Acesso negado.<br>O usuário não possui permissão para acessar o painel administrativo.</span>";
+
+return;
+
+}
+
+document.getElementById("dashboard").style.display="block";
+
+document.getElementById("relatorio").innerHTML=
+
+`
+
+<tr>
+
+<td>${periodo}</td>
+
+<td>R$ 28.500,00</td>
+
+<td>352</td>
+
+<td>148</td>
+
+</tr>
+
+`;
+
+document.getElementById("mensagem").innerHTML=
+
+"<span class='success'>"
+
++"Relatório gerencial carregado conforme o período selecionado.<br><br>"
+
++"Indicadores operacionais atualizados para apoio à tomada de decisão."
+
++"</span>";
+
+}
+
+</script>
+
+</body>
+
+</html>

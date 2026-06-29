@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+<meta charset="UTF-8">
+<title>RF04 - Gestão de Promoções</title>
+
+<style>
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f4f6f9;
+    margin:30px;
+}
+
+.container{
+    width:1000px;
+    margin:auto;
+}
+
+.card{
+    background:white;
+    padding:20px;
+    margin-bottom:20px;
+    border-radius:8px;
+    box-shadow:0 0 10px rgba(0,0,0,.15);
+}
+
+h1{
+    color:#003366;
+    text-align:center;
+}
+
+label{
+    display:block;
+    margin-top:15px;
+}
+
+select{
+    width:100%;
+    padding:10px;
+    margin-top:5px;
+}
+
+button{
+
+    margin-top:20px;
+    padding:12px 20px;
+    background:#003366;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+
+}
+
+button:hover{
+
+background:#0055aa;
+
+}
+
+.success{
+
+color:green;
+font-weight:bold;
+
+}
+
+.error{
+
+color:red;
+font-weight:bold;
+
+}
+
+.info{
+
+background:#eef7ff;
+padding:15px;
+border-left:5px solid #003366;
+margin-top:20px;
+
+}
+
+table{
+
+width:100%;
+border-collapse:collapse;
+margin-top:20px;
+
+}
+
+table,th,td{
+
+border:1px solid #ccc;
+
+}
+
+th{
+
+background:#003366;
+color:white;
+
+}
+
+th,td{
+
+padding:10px;
+text-align:center;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="card">
+
+<h1>Gestão de Promoções</h1>
+
+<label>Cliente</label>
+
+<select id="cliente">
+
+<option>João</option>
+<option>Maria</option>
+<option>Carlos</option>
+
+</select>
+
+<label>Unidade da Franquia</label>
+
+<select id="unidade">
+
+<option>Centro</option>
+<option>Shopping</option>
+<option>Zona Norte</option>
+
+</select>
+
+<button onclick="verificarPromocao()">
+
+Consultar Promoção
+
+</button>
+
+<p id="resultado"></p>
+
+</div>
+
+<div class="card">
+
+<h2>Promoções Cadastradas</h2>
+
+<table>
+
+<tr>
+
+<th>Promoção</th>
+
+<th>Cliente Elegível</th>
+
+<th>Unidade</th>
+
+</tr>
+
+<tr>
+
+<td>20% de desconto</td>
+
+<td>João</td>
+
+<td>Todas</td>
+
+</tr>
+
+<tr>
+
+<td>Combo Família</td>
+
+<td>Todos</td>
+
+<td>Shopping</td>
+
+</tr>
+
+</table>
+
+<div class="info">
+
+<b>Casos de Teste Simulados</b>
+
+<ul>
+
+<li><b>CT-RF04-01</b> Promoção personalizada para um cliente.</li>
+
+<li><b>CT-RF04-02</b> Promoção exclusiva para uma unidade.</li>
+
+<li><b>CT-RF04-03</b> Bloqueio quando cliente ou unidade não são elegíveis.</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+function verificarPromocao(){
+
+let cliente=document.getElementById("cliente").value;
+let unidade=document.getElementById("unidade").value;
+
+let texto="";
+
+// CT-RF04-01
+
+if(cliente=="João"){
+
+texto+="<span class='success'>";
+
+texto+="<br>";
+
+texto+="Cliente elegível.<br>";
+
+texto+="Promoção disponível: <b>20% de desconto</b>.";
+
+texto+="</span><br><br>";
+
+}
+
+// CT-RF04-02
+
+if(unidade=="Shopping"){
+
+texto+="<span class='success'>";
+
+texto+="<br>";
+
+texto+="Promoção exclusiva da unidade Shopping.<br>";
+
+texto+="Benefício: <b>Combo Família com sobremesa grátis.</b>";
+
+texto+="</span><br><br>";
+
+}
+
+// CT-RF04-03
+
+if(cliente!="João" && unidade!="Shopping"){
+
+texto="<span class='error'>";
+
+texto+="<br>";
+
+texto+="Promoção bloqueada.<br>";
+
+texto+="O cliente ou a unidade selecionada não atende aos critérios da oferta.";
+
+texto+="</span>";
+
+}
+
+document.getElementById("resultado").innerHTML=texto;
+
+}
+
+</script>
+
+</body>
+
+</html>
